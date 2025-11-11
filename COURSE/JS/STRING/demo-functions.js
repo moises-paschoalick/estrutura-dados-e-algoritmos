@@ -51,6 +51,7 @@ console.log(s.split(' ')[1])
 console.log("str3.split(' '):", str3.split(" "));
 
 // slice
+// Mozilla
 console.log("str4.slice(-3):", `"${str4.slice(-3)}"`);    // "lla"
 console.log("str4.slice(2, 5):", `"${str4.slice(2, 5)}"`);  // "zil"
 console.log("str4.slice(5, 2):", `"${str4.slice(5, 2)}"`);  // ""

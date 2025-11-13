@@ -1,16 +1,16 @@
 # estrutura-dados-e-algoritmos
 
-01 Strings
-02 Arrays
-03 Recusividade
-04 Complexidade de algoritmos
-05 Busca e ordenação
-06 Listas
-07 Pilhas e filas
-08 Conjuntos e dicionários
-09 Árvores
-10 Algoritmos gulosos
-11 Grafos
-12 Programação dinâmica
+1. Strings
+2. Arrays
+3. Recusividade
+4. Complexidade de algoritmos
+5. Busca e ordenação
+6. Listas
+7. Pilhas e filas
+8. Conjuntos e dicionários
+9. Árvores
+10. Algoritmos gulosos
+11. Grafos
+12. Programação dinâmica
 
 

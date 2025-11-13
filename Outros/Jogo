@@ -1,0 +1,47 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+public class Gesto {
+    String gesto;
+    List<Gesto> ganha;
+    List<Gesto> perde;
+}
+
+public class Mao {
+    Gesto gesto;
+}
+
+public enum Resultado {
+    GANHA,
+    PERDE,
+    EMPATA
+}
+
+public JogoController {
+    public Resultado jogar(Mao jogador1, Mao jogador2) {
+        if(jogador1.gesto.ganha.contains(jogador2.gesto)) {
+            return Resultado.GANHA
+        }
+        if(jogador1.gesto.perde.contains(jogador2.gesto)) {
+            return Resultado.PERDE
+        }
+        return Resultado.EMPATA;
+    }
+}
+
+public Class Jogo {
+    Mao jogador1;
+    Mao jogador2;
+    
+    JogoController jogoController;
+    
+    public void jogar() {
+        jogador1 = new Mao();
+        jogador2 = Gesto.PAPEL;
+        
+        Resultado resultaod = jogoController.jogar(jogador1, jogador2)
+        
+        System.out.println(resultado);
+    }
+    
+}

@@ -1,3 +1,25 @@
+//console.log("abcdef".substring(0,1)); // Teste substring
+
+function extractDateData(date) {
+   
+    const day = Number(date.substring(0,2));
+    const month = Number(date.substring(3,5));
+    const year = Number(date.substring(6,10));
+    
+    return { day, month, year };
+
+};    
+
+const obj = extractDateData("21/07/2010");
+console.log(`Dia: ${obj.day}`);
+console.log(`Mês: ${obj.month}`);
+console.log(`Year: ${obj.year}`);
+
+
+
+/*
+// Extrair dia, mês e ano de uma data no formato DD/MM/AAAA
+// Exemplo com split
 function extractDateData(date) {
     
     const parts = date.split("/");
@@ -6,12 +28,12 @@ function extractDateData(date) {
     const year = parts[2];
     
     return { day, month, year };
-}
 
 const obj = extractDateData("21/07/2010");
 console.log(`Dia: ${obj.day}`);
 console.log(`Mês: ${obj.month}`);
 console.log(`Year: ${obj.year}`);
+*/
 
 
 /*

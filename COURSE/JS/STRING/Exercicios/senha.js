@@ -1,15 +1,26 @@
-/*
+
 // Resolução com REGEX
-function verifyPassword(password) {
-    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#&]).{8,}$/;
-        
+function verifyPasswordRegex(password) {
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#&]).{8,}$/;        
     return regex.test(password);    
 }
 
 
-console.log(verifyPassword("amerca1@"));
-console.log(verifyPassword("amrca154682"));
-*/
+function verifyPasswordRegex2(str) {
+    const regex1 = /^.{8,}$/;
+    const regex2 = /[a-zA-Z]/; 
+    const regex3 = /\d/;  //[0-9] d minúsculo -> digio D maiúsculo -> não dígito
+    const regex4 = /[@#&]/;
+    
+    return regex1.test(str) && regex2.test(str) && regex3.test(str) && regex4.test(str);    
+
+}
+
+
+
+console.log(verifyPasswordRegex2("amerca1@"));
+console.log(verifyPasswordRegex2("amrca154682"));
+
 
 
 // Resolução sem REGEX
@@ -66,5 +77,5 @@ function hastSpecialCharacter(str) {
 }        
 
 //console.log(hastLetter("11"));
-console.log(validatePassword("amerca1@"));
-console.log(validatePassword("amerca154682"));
+//console.log(validatePassword("amerca1@"));
+//console.log(validatePassword("amerca154682"));

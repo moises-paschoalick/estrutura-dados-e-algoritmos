@@ -31,4 +31,34 @@ function verifyAnagram(word1, word2) {
 
  };
 
-console.log(verifyAnagram("anagram","nagaram"));
+//console.log(verifyAnagram("anagram","nagaram"));
+
+// Problema "Valid-anagram"
+// Fazer: sem array 
+// somente minuscula
+/*
+function verifyAnagram2(word1, word2){
+  let separateWord1 = word1.split("");  
+  let separateWord2 = word2.split("");
+
+  separateWord1.sort();
+  separateWord2.sort();
+  
+  let concateWord1 = separateWord1.join('');
+  let contateWord2 = separateWord2.join('');
+
+  return concateWord1 === contateWord2;    
+}
+
+console.log(verifyAnagram2("anagram","nagaram")); // true
+console.log(verifyAnagram2("anagram","nagaran")); // false
+*/
+
+function areAnagrams(firstWord, secondWord) {
+    const sortedFirstWord = firstWord.split('').sort().join('');
+    const sortedSecondWord = secondWord.split('').sort().join('');
+    
+    return sortedFirstWord === sortedSecondWord;
+}
+
+console.log(areAnagrams("anagram","nagaram")); // true

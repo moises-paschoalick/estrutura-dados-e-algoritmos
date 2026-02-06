@@ -18,34 +18,31 @@ function Transaction(csv) {
     const parts = csv.split(",");
     this.name = parts[0];
     this.time = Number(parts[1]);
-    this.money = Number(parts[2]);
+    this.amount = Number(parts[2]);
     this.city = parts[3];
 }
 
-function validTransaction(transaction){
+function validTransaction(transactions) {
+
+  const t1 = new Transaction(transactions[0]);
+  const t2 = new Transaction(transactions[1]);  
+ 
+  if(t1.amount > 1000)    
+    return [transactions[0]];
+
+  if(t2.amount > 1000)
+    return [transactions[1]];
   
-  let isValid = true;
-
-  console.log(transaction);
-
-  if(transaction.money > 1000)
-    return !isValid
-
-  if(typeof(transaction.name) !== "string" ||
-     !Number.isFinite(transaction.time) ||
-     !Number.isFinite(transaction.money) ||
-     typeof(transaction.city) !== "string" ) return !isValid
-  
-   //
-  
-  return isValid;
-
+  if(t1.name === t2.name && t1.city !== t2.city && Math.abs(t1.time - t2.time) <= 60)
+    return transactions;
+      
 }
 
-//const transactions = ["alice,20,800,mtv", "alice,50,1200,mtv"]
-const transactions = ["alice,20,800,mtv", "alice,a50,a1200,mtv"]
-const t1 = new Transaction(transactions[0]);
-const t2 = new Transaction(transactions[1]);
+const transactions1 = ["alice,20,800,mtv", "alice,50,100,beijing"]
+const transactions2 = ["alice,20,800,mtv", "alice,20,1200,mtv"]
+const transactions3 = ["alice,20,800,mtv", "bob,50,1200,mtv"]
 
-console.log(validTransaction(t2));
+console.log(validTransaction(transactions1));
+console.log(validTransaction(transactions2));
+console.log(validTransaction(transactions3));
 

@@ -38,11 +38,23 @@ function validTransaction(transactions) {
       
 }
 
+/// Fazer dois laços
+function invalidTransactions(transactions) {
+    const invalidArray = new Array(transactions.lenght).fill(false);
+    
+    for(let i=0; i<transactions.length; i++) {
+       const ti = new Transaction(transactions[i]);
+       console.log(ti)
+    }
+}
+
+
 const transactions1 = ["alice,20,800,mtv", "alice,50,100,beijing"]
 const transactions2 = ["alice,20,800,mtv", "alice,20,1200,mtv"]
 const transactions3 = ["alice,20,800,mtv", "bob,50,1200,mtv"]
 
-console.log(validTransaction(transactions1));
-console.log(validTransaction(transactions2));
-console.log(validTransaction(transactions3));
+console.log(invalidTransactions(transactions1));
+//console.log(validTransaction(transactions1));
+//console.log(validTransaction(transactions2));
+//console.log(validTransaction(transactions3));
 

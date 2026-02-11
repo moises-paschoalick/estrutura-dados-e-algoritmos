@@ -1,3 +1,4 @@
+// Leetcode: https://leetcode.com/problems/max-consecutive-ones/description/
 const findMaxConsecutivesOnes = (nums) => {
     let maxOnes = 0; // Maior sequencia de 1s registrada
     let countOnes = 0; // Sequencia de 1s atual

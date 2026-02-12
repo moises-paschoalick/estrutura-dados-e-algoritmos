@@ -1,10 +1,12 @@
 // Problema "prefixo-comun" - longest-common-prefix (Leetcode)
 // Fazer: Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
 
+
 /**
  * @param {string[]} strs
  * @return {string}
  */
+/*
 var longestCommonPrefix = function(strs) {
   if(strs.length == 0) return ""; 
   if(strs.length == 1) return strs[0]; 
@@ -54,7 +56,27 @@ function longestVector(v1, v2){
     }        
 
     return [longestWord, shortestWord];
+}*/
+
+
+// Usando ordenação
+var longestCommonPrefix = function(strs) {
+    
+    strs.sort();
+    let first = strs[0];
+    let last = strs[strs.length - 1];
+    result = []
+
+    for(let i = 0; i < Math.min(first.length, last.length); i++) {
+        if(first[i] !== last[i]) {
+            return result.join('');
+        }
+        result.push(first[i]);
+    }
+    return result.join('');
 }
+
+
 
 // case 1
 let words = ["flowers", "flow", "flight"];
@@ -65,7 +87,7 @@ let words3 = [""];
 // case 4
 let words4 = ["reflower","flow","flight"]
 
-console.log(longestCommonPrefix(words4)); 
+console.log(`"${longestCommonPrefix(words4)}"`); 
 
 //console.log(checkCommonWords("racecar","car"));
 //console.log(checkCommonWords("car","car"));

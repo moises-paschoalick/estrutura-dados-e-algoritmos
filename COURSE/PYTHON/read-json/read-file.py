@@ -2,7 +2,7 @@
 # python3.10 read-file.py
 
 import json
-## Essa lib consegue ler o timestamp com Z (zulu time)
+## Essa lib consegue ler o timestamp com Z (zulu time) - Greenwitch
 from dateutil import parser 
 
 with open('file.json', 'r') as file:

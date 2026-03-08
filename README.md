@@ -57,3 +57,9 @@ Qual estrutura de dados você usaria?
 
 5. Organizar relacionamentos de redes sociais (twitter, facebook)
 - Grafos
+
+
+## Java
+```
+Arrays.toString(elementos);
+```

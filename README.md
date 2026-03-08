@@ -14,22 +14,22 @@
 12. Programação dinâmica
 
 
-## Loiane
+## Loiane - Training
 # Estrutura de dados com Java
 
 ```
 https://loiane.training/continuar-curso/estrutura-de-dados
 ```
 
-Vetores (Arrays)
-Pilhas (Stacks)
-Filas (Queues)
-Listas Encadeaadas (Linked Lists)
-Listas Duplamente Encadeadas (Doubly-Linked Lists)
-Conjuntos (Sets)
-Tabelas de Hashing (HashTables)
-Árvores (Trees)
-Grafos (Graphs)
+- Vetores (Arrays)
+- Pilhas (Stacks)
+- Filas (Queues)
+- Listas Encadeaadas (Linked Lists)
+- Listas Duplamente Encadeadas (Doubly-Linked Lists)
+- Conjuntos (Sets)
+- Tabelas de Hashing (HashTables)
+- Árvores (Trees)
+- Grafos (Graphs)
 
 # Algoritmos
 Algoritmo de Ordenação

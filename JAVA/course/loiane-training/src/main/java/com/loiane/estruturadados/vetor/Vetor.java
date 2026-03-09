@@ -46,6 +46,16 @@ public class Vetor {
         return this.tamanho;
     }
 
+    //RuntimeException -> não precisa do Throws Exception
+    public String busca(int posicao) {
+        if (!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Posição Inválida");
+
+        }
+        return this.elementos[posicao];
+    }
+
+
     /*
     @Override
     public String toString() {

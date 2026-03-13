@@ -1,20 +1,31 @@
 package com.loiane.estruturadados.vetor;
 
-import java.util.Arrays;
+import java.lang.reflect.Array;
 
-public class VetorObjetos {
+//Diamond <>
+//T -> Class type
+public class Lista<T> {
 
-    //Vai usar Generics no lugar do Object
     //Generics iniciou no Java 5...
-    private Object[] elementos;
+    private T[] elementos;
     private int tamanho;
 
-    public VetorObjetos(int capacidade) {
-        this.elementos = new Object[capacidade];
+    public Lista(int capacidade) {
+        // Solução mais elegante
+        this.elementos = (T[]) new Object[capacidade]; // Solução do livro java effetivo
         this.tamanho = 0;
     }
 
-    public boolean adiciona(Object elemento) {
+    // Opção 2
+    // Reflection JAVA -> instanciar objetos
+    public Lista(int capacidade, Class<T> tipoClasse) {
+        //new T[capacidade] -> java não permite
+        this.elementos = (T[]) Array.newInstance(tipoClasse, capacidade);
+        this.tamanho = 0;
+    }
+
+
+    public boolean adiciona(T elemento) {
         this.aumentaCapacidade();
         if (this.tamanho < this.elementos.length){
             this.elementos[this.tamanho] = elemento;
@@ -24,7 +35,7 @@ public class VetorObjetos {
         return false;
     }
     //Overloading -> Sobrecarregar o método adiciona, modificando a assinatura
-    public boolean adiciona(int posicao, Object elemento) {
+    public boolean adiciona(int posicao, T elemento) {
         if (!(posicao >= 0 && posicao < tamanho)) {
             throw new IllegalArgumentException("Posição Inválida");
         }
@@ -53,7 +64,7 @@ public class VetorObjetos {
         this.tamanho--;
     }
 
-    public void remove(Object elemento) {
+    public void remove(T elemento) {
 
         int posicao = busca(elemento);
         if(posicao == -1)
@@ -76,7 +87,7 @@ public class VetorObjetos {
     }
 
     // Sobrescrever o método
-    public int busca(Object elemento) {
+    public int busca(T elemento) {
         for (int i=0; i<this.tamanho; i++) {
             if (this.elementos[i].equals(elemento)) {
                 return i;
@@ -88,7 +99,7 @@ public class VetorObjetos {
     private void aumentaCapacidade() {
         if(this.tamanho == this.elementos.length) {
             // dobra a capacidade, melhor forma dobrar o tamanho;
-            Object[] elementosNovos = new Object[this.elementos.length * 2];
+            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
             for (int i=0; i<this.elementos.length; i++){
                 elementosNovos[i] = this.elementos[i];
             }
